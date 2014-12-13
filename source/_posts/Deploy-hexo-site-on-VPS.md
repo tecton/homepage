@@ -172,5 +172,5 @@ source /home/git/.nvm/nvm.sh
 nvm use 0.10
 hexo generate
 chmod -R 755 public/*
-cp -rf public/* $SITE_DIR
+cp -rfp public/* $SITE_DIR
 ```
