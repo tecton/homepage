@@ -22,6 +22,7 @@ tags:
 对于背包问题的动态规划过程，使我卡住的就是状态的定义，只要能将这个弄懂了，那么状态转移方程也就自然出来了。
 
 本题的状态定义为DP[i][j][k]。代表的意思是 **在前i个图片中，选取了k张图片，将它们贴到宽度为j的表格中所能产生的最大价值。**
+<!-- more -->
 
 有了它，分分钟列出状态转移方程：
 
@@ -34,7 +35,7 @@ DP[i - 1][j][k])                          为不选择第i张图片
 
 这样初步代码就出来了！
 最外侧遍历N张图片，里面的2层循环遍历每种状态。最后找N张图片下选取任意张在任意宽度下的最大价值。
-```
+``` cpp original algorithm
 #include <iostream>
 #include <cstring>
 #include <algorithm>
@@ -81,7 +82,7 @@ int main(int argc, const char * argv[]) {
 这个三维数组中第一维的i（即遍历每张图片）可以省略。因为它只会取上一张图片（即i-1）的状态数据。因此空间上可以压缩至2维，但是要采取从后向前的遍历方法。（为了避免覆盖数据，详见算法九讲）
 
 这样代码就变成了如下形式：
-```
+```cpp save memory space
 
 int dp[10001][51]; //2维
 ...
@@ -97,7 +98,7 @@ int dp[10001][51]; //2维
 ...
 ```
 当然代码还是可以优化的，我参考了排名榜上前几名的写法，进行了一下优化，比如判断j >= A[i - 1]之类的也可以放到for循环里面，最终代码如下：
-```
+```cpp final resolution https://gist.github.com/tecton/50c860275d867d835924 gist
 #include <iostream>
 #include <cstring>
 #include <algorithm>
