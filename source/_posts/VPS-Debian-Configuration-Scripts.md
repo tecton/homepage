@@ -56,6 +56,16 @@ http://luoqkk.com/openconnect-vpn-server-anyconnect-ocserv.html </br>
 https://blog.phoenixlzx.com/2014/07/21/setup-openconnect-server-on-ubuntu/ </br>
 http://bitinn.net/11084/
 
+2015.6.1 update start
+
+由于手机需要用anyconnect进行连接，openconnect还有一个下发路由表的功能，这样国内IP就可以不必翻墙了。</br>
+在ocserv.conf文件中加入一些no-route的项即可。
+
+参考资料：
+https://github.com/CNMan/ocserv-cn-no-route
+
+update end
+
 ###Shadowsocks配置
 由于涉及密码，只能手动配置= =
 ```
