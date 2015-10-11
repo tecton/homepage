@@ -21,6 +21,8 @@ char& rc = *pc;
 行为不确定，很危险。
 引用无法改变引用对象，且不能引用NULL。
 
+<!-- more -->
+
 ### Item 2
 static_cast是类型转换。</br>
 C:</br>
